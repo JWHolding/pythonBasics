@@ -1,24 +1,44 @@
-product1 = "7up"
-product2 = "Coke"
+import os
 
-price1=1.75
-price2=1.21
+def logo():
+    print("           pepsipepsipep_")
+    print("       sipepsipepsipepsipeps")
+    print("    ipepsipepsipepsipepsipepsip")
+    print("  epsipepsipepsipepsipepsipepsipe")
+    print(" ps       epsipepsipepsipepsipepsi")
+    print("               pepsipepsipepsipepsi")
+    print("    IPEPSIPE           sipepsip")
+    print("PEPSIPEPSIPEPSIPEPSI")
+    print(" PEPSIPEPSIPEPSIPEPSIPEPS       EP")
+    print("  PEPSIPEPSIPEPSIPEPSIPEPSIPEPSIP")
+    print("    EPSIPEPSIPEPSIPEPSIPEPSIPEP")
+    print("       SIPEPSIPEPSIPEPSIPEPS")
+    print("          ~IPEPSIPEPSIPE~")
 
-qty1=10
-qty2=5
+#get all inputs
 
-total = (qty1*price1)+(qty2*price2)
+product1 = input("Product1 Name:")
+product2 = input("Product2 Name:")
+price1 = input("%s Price:" % product1)
+price2 = input("%s Price:" % product2)
+qty1 = input ("%s Quantity:" % product1)
+qty2 = input ("%s Quantity:" % product2)
 
+#calculate the total price
+total = (int(qty1)*float(price1))+(int(qty2)*float(price2))
+tax = total*0.2
 discount = input("Is there a discount Y/N:")
+#if there is a discount we take this off total
 if (discount.upper() == "Y"):
     discountRate = input("what is the percentage? xx%:")
     total *= 1-(int(discountRate)/100)
-tax = total*1.2
 totalCost = tax+total
-lineSpace="_____________________"
+lineSpace="__________________________________"
+os.system('cls')
+logo()
 print(lineSpace)
-print(product1, "  x  ", qty1, " @ ", price1)
-print(product2, " x   ", qty2, " @ ", price2)
+print(product1, " x ", qty1, " @ £" + price1)
+print(product2, " x ", qty2, " @ £" + price2)
 print(lineSpace)
 print("Total: %0.2f" % total)
 print("Tax: %0.2f" % tax)
