@@ -1,2 +1,2 @@
 # pythonBasics
-## Some basic Python stuff when working with a class
+## Some basic Python code when working with Shafeeq
