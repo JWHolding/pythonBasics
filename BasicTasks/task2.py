@@ -5,4 +5,6 @@ salary = 700000
 tax = salary*21/100
 net_salary = salary - tax
 print("Employee: ", employee)
+print("Salary: £", salary)
+print("Tax: £", tax)
 print("Net Pay = £%0.2f" % net_salary)
