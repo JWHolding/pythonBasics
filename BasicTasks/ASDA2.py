@@ -31,7 +31,7 @@ discount = input("Is there a discount Y/N:")
 #if there is a discount we take this off total
 if (discount.upper() == "Y"):
     discountRate = input("what is the percentage? xx%:")
-    total *= 1-(int(discountRate)/100)
+    totalDiscounted = total*(1-(int(discountRate)/100))
 totalCost = tax+total
 lineSpace="__________________________________"
 os.system('cls')
@@ -44,6 +44,9 @@ print("Total: %0.2f" % total)
 print("Tax: %0.2f" % tax)
 if (discount.upper() == "Y"):
     print("Discount:", discountRate + "%")
-print(lineSpace)
-print("Total to Pay: %0.2f" % totalCost)
+    print("Discount Amount:£%0.2f" % float(total-totalDiscounted))
+    print(lineSpace)
+    print("Total to Pay: %0.2f" % totalDiscounted)
+else:
+    print("Total to Pay: %0.2f" % totalCost)
 print(lineSpace)
