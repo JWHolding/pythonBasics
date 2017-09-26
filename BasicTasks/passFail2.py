@@ -1,18 +1,4 @@
-import os
-
-def fail(failRate):
-    if failRate == 1:
-        print("Retake the exam")
-    elif failRate ==2 :
-        print("Retake the course")
-    else:
-        print("Go home my friend")
-
-def passed(tot,p):
-    os.system("cls")
-    print("Passed!")
-    print("Total:", tot)
-    print("Percentage:%0.2f%%" % p)
+from passFail2Functions import passed, fail
 
 failed=0
 phy = int(input("Enter your Physics Mark:"))
