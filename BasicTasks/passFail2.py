@@ -1,10 +1,10 @@
 
 def eval(passRate):
     if passRate == 0:
-        total=int(phy+che+mat)
+        total=phy+che+mat
         per=float(total*100/300)
-        print("Total:" + total)
-        print("Percentage:%0.2f" % per)
+        print("Total:", total)
+        print("Percentage:%0.2f%%" % per)
     elif passRate == 1:
         print("Retake the exam")
     elif passRate ==2 :
