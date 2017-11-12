@@ -4,6 +4,7 @@ By Jacob JWHolding
 10.11.17
 """
 
+import sys
 from ATMFunction import displayMenu, clearScreen
 from account import Account
 
@@ -14,7 +15,25 @@ acc4 = Account(100, "Tadas")
 
 ID = int(input("Please Insert your ID: "))
 clearScreen()
-displayMenu()
-
-print("Hello %s. Your Current Balance is: %0.2f" % (acc1.getName(),
-                                                    float(acc1.getBalance())))
+count = int(0)
+while True:
+    uin = str(displayMenu())
+    if uin == "1":
+        print("Hello %s. Your Current Balance is: %0.2f"
+              % (acc1.getName(), float(acc1.getBalance())))
+        input("Press any key to continue...")
+        clearScreen()
+    elif uin == "2":
+        acc1.withdraw(int(input("How much would you like to Withdraw: ")))
+        input("Press any key to continue...")
+        clearScreen()
+    elif uin == "3":
+        acc1.deposit(int(input("How much would you like to Deposit: ")))
+        input("Press any key to continue...")
+        clearScreen()
+    elif uin == "Q":
+        sys.exit("Goodbye!")
+    else:
+        clearScreen()
+        print("Invalid option, try again.")
+        continue

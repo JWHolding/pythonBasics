@@ -8,7 +8,8 @@ def displayMenu():
     print("Press 1 to see Current Balance")
     print("Press 2 to withdraw Money")
     print("Press 3 to Deposit Money")
-    selection = int(input("Selection: "))
+    print("q to quit")
+    selection = str(input("Selection: "))
     return selection
 
 

@@ -14,7 +14,7 @@ class Account:
 
     def deposit(self, amt):
         """Deposit Method for Account."""
-        self.__balance = self.balance + amt
+        self.__balance = self.__balance + amt
 
     def withdraw(self, amt):
         """Withdraw method for Account."""
