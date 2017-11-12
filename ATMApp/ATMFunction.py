@@ -3,7 +3,13 @@
 
 def displayMenu():
     """Print out ATM Menu."""
-    print("Hello World")
+    print("Welcome To QA Bank")
+    print("------------------------------")
+    print("Press 1 to see Current Balance")
+    print("Press 2 to withdraw Money")
+    print("Press 3 to Deposit Money")
+    selection = int(input("Selection: "))
+    return selection
 
 
 def clearScreen():
