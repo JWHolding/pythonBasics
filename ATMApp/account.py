@@ -11,7 +11,7 @@ class Account:
         """Account Constructor."""
         self.__balance = initial
         self.__name = fname
-        self.__pin = hashlib.md5(pin.encode()).hexdigest()
+        self.__pin = hashlib.sha512(pin.encode()).hexdigest()
         Account.numCreated += 1
 
     def deposit(self, amt):
@@ -32,4 +32,4 @@ class Account:
 
     def checkPin(self, upin):
         """Method for checking if user inputted string matches stored pin."""
-        return bool(hashlib.md5(upin.encode()).hexdigest() == self.__pin)
+        return bool(hashlib.sha512(upin.encode()).hexdigest() == self.__pin)
