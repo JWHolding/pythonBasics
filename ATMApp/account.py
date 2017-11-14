@@ -15,12 +15,14 @@ class Account:
         self.__id = Account.numCreated + 1
         Account.numCreated += 1
 
-    def deposit(self, amt):
+    def deposit(self):
         """Deposit Method for Account."""
+        amt = int(input("How much would you like to Deposit: "))
         self.__balance = self.__balance + amt
 
-    def withdraw(self, amt):
+    def withdraw(self):
         """Withdraw method for Account."""
+        amt = int(input("How much would you like to Withdraw: "))
         self.__balance = self.__balance - amt
 
     def getBalance(self):
@@ -35,6 +37,7 @@ class Account:
         """Method for checking if user inputted string matches stored pin."""
         return bool(hashlib.sha512(upin.encode()).hexdigest() == self.__pin)
 
-    def changePin(self, pin):
+    def changePin(self):
         """Method that allows user to change their pin."""
+        pin = input("insert new pin: ")
         self.__pin = hashlib.sha512(pin.encode()).hexdigest()

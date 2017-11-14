@@ -28,23 +28,20 @@ while True:
             while True:
                 uin = str(displayMenu())
                 if uin == "1":
-                    print("Hello %s. Your Current Balance is: %0.2f"
+                    print("Hello %s. Your Current Balance is: £%0.2f"
                           % (acc1.getName(), float(acc1.getBalance())))
-                    input("Press any key to continue...")
+                    time.sleep(1)
                     clearScreen()
                 elif uin == "2":
-                    acc1.withdraw(int(
-                        input("How much would you like to Withdraw: ")))
-                    input("Press any key to continue...")
+                    acc1.withdraw()
+                    time.sleep(0.5)
                     clearScreen()
                 elif uin == "3":
-                    acc1.deposit(int(
-                        input("How much would you like to Deposit: ")))
-                    input("Press any key to continue...")
+                    acc1.deposit()
+                    time.sleep(0.5)
                     clearScreen()
                 elif uin == "4":
-                    npin = str(input("Insert new PIN: "))
-                    acc1.changePin(npin)
+                    acc1.changePin()
                 elif uin == "Q" or uin == "q":
                     print("Goodbye!")
                     time.sleep(0.5)
