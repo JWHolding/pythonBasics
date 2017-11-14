@@ -48,7 +48,7 @@ while True:
                 elif uin == "Q" or uin == "q":
                     print("Goodbye!")
                     time.sleep(0.5)
-                    attempts = 4
+                    attempts = 5
                     break
                 else:
                     clearScreen()
