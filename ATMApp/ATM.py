@@ -6,42 +6,37 @@ By Jacob JWHolding
 
 import getpass
 import time
-from account import Account
-from ATMFunction import displayMenu, clearScreen
+from ATMFunction import displayMenu, clearScreen, getAccount
 
-acc1 = Account(100, "Jacob", "0000")
-acc2 = Account(100, "Gareth", "0000")
-acc3 = Account(100, "Elliot", "0000")
-acc4 = Account(100, "Tadas", "0000")
-acc5 = Account(100, "Shafeeq", "0000")
 
 while True:
     clearScreen()
     ID = int(input("Please Insert your ID: "))
+    acc = getAccount(ID)
     attempts = int(0)
     while attempts < 4:
         clearScreen()
         pin = getpass.getpass()
         clearScreen()
-        if acc1.checkPin(pin):
+        if acc.checkPin(pin):
             attempts = 0
             while True:
                 uin = str(displayMenu())
                 if uin == "1":
                     print("Hello %s. Your Current Balance is: £%0.2f"
-                          % (acc1.getName(), float(acc1.getBalance())))
-                    time.sleep(1)
+                          % (acc.getName(), float(acc.getBalance())))
+                    time.sleep(2)
                     clearScreen()
                 elif uin == "2":
-                    acc1.withdraw()
+                    acc.withdraw()
                     time.sleep(0.5)
                     clearScreen()
                 elif uin == "3":
-                    acc1.deposit()
+                    acc.deposit()
                     time.sleep(0.5)
                     clearScreen()
                 elif uin == "4":
-                    acc1.changePin()
+                    acc.changePin()
                 elif uin == "Q" or uin == "q":
                     print("Goodbye!")
                     time.sleep(0.5)
