@@ -42,6 +42,9 @@ while True:
                         input("How much would you like to Deposit: ")))
                     input("Press any key to continue...")
                     clearScreen()
+                elif uin == "4":
+                    npin = str(input("Insert new PIN: "))
+                    acc1.changePin(npin)
                 elif uin == "Q" or uin == "q":
                     print("Goodbye!")
                     time.sleep(0.5)

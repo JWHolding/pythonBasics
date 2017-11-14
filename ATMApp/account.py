@@ -33,3 +33,7 @@ class Account:
     def checkPin(self, upin):
         """Method for checking if user inputted string matches stored pin."""
         return bool(hashlib.sha512(upin.encode()).hexdigest() == self.__pin)
+
+    def changePin(self, pin):
+        """Method that allows user to change their pin."""
+        self.__pin = hashlib.sha512(pin.encode()).hexdigest()
