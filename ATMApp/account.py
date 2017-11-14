@@ -12,6 +12,7 @@ class Account:
         self.__balance = initial
         self.__name = fname
         self.__pin = hashlib.sha512(pin.encode()).hexdigest()
+        self.__id = Account.numCreated + 1
         Account.numCreated += 1
 
     def deposit(self, amt):
