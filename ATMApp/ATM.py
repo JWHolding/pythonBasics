@@ -53,6 +53,6 @@ while True:
                     continue
         else:
             attempts = attempts + 1
-    if attempts < 4:
+    if attempts == 4:
         print("Too many incorrect attempts")
         input("press any key to continue...")
