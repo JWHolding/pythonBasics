@@ -33,11 +33,13 @@ while True:
                     input("Press any key to continue...")
                     clearScreen()
                 elif uin == "2":
-                    acc1.withdraw(int(input("How much would you like to Withdraw: ")))
+                    acc1.withdraw(int(
+                        input("How much would you like to Withdraw: ")))
                     input("Press any key to continue...")
                     clearScreen()
                 elif uin == "3":
-                    acc1.deposit(int(input("How much would you like to Deposit: ")))
+                    acc1.deposit(int(
+                        input("How much would you like to Deposit: ")))
                     input("Press any key to continue...")
                     clearScreen()
                 elif uin == "Q" or uin == "q":
