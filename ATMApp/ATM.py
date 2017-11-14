@@ -42,7 +42,7 @@ while True:
                     clearScreen()
                 elif uin == "Q" or uin == "q":
                     print("Goodbye!")
-                    time.sleep(2)
+                    time.sleep(0.5)
                     attempts = 4
                     break
                 else:
