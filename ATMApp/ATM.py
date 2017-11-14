@@ -12,6 +12,7 @@ acc1 = Account(100, "Jacob")
 acc2 = Account(100, "Gareth")
 acc3 = Account(100, "Elliot")
 acc4 = Account(100, "Tadas")
+acc5 = Account(100, "Shafeeq")
 
 while True:
     clearScreen()
