@@ -4,8 +4,7 @@ By Jacob JWHolding
 10.11.17
 """
 
-import time
-from ATMFunction import displayMenu, clearScreen, getAccount
+from ATMFunction import displayMenu, clearScreen, getAccount, delay
 
 
 while True:
@@ -22,21 +21,21 @@ while True:
                 if uin == "1":
                     print("Hello %s. Your Current Balance is: £%0.2f"
                           % (acc.getName(), float(acc.getBalance())))
-                    time.sleep(2)
+                    delay(2)
                     clearScreen()
                 elif uin == "2":
                     acc.withdraw()
-                    time.sleep(0.5)
+                    delay(0.5)
                     clearScreen()
                 elif uin == "3":
                     acc.deposit()
-                    time.sleep(0.5)
+                    delay(0.5)
                     clearScreen()
                 elif uin == "4":
                     acc.changePin()
                 elif uin == "Q" or uin == "q":
                     print("Goodbye!")
-                    time.sleep(0.5)
+                    delay(0.5)
                     attempts = 5
                     break
                 else:

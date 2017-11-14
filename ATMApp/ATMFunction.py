@@ -30,6 +30,12 @@ def clearScreen():
         os.system('clear')
 
 
+def delay(amt):
+    """Provide a short delay. Seconds."""
+    import time
+    time.sleep(amt)
+
+
 def getAccount(uid):
     """Return the account object for user."""
     if uid == 1:
