@@ -4,7 +4,6 @@ By Jacob JWHolding
 10.11.17
 """
 
-import getpass
 import time
 from ATMFunction import displayMenu, clearScreen, getAccount
 
@@ -16,9 +15,7 @@ while True:
     attempts = int(0)
     while attempts < 4:
         clearScreen()
-        pin = getpass.getpass()
-        clearScreen()
-        if acc.checkPin(pin):
+        if acc.checkPin():
             attempts = 0
             while True:
                 uin = str(displayMenu())

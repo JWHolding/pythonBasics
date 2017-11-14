@@ -1,5 +1,6 @@
 """Accounts class."""
 import hashlib
+import getpass
 
 
 class Account:
@@ -33,9 +34,10 @@ class Account:
         """Name getter for Account."""
         return self.__name
 
-    def checkPin(self, upin):
+    def checkPin(self):
         """Method for checking if user inputted string matches stored pin."""
-        return bool(hashlib.sha512(upin.encode()).hexdigest() == self.__pin)
+        pin = getpass.getpass()
+        return bool(hashlib.sha512(pin.encode()).hexdigest() == self.__pin)
 
     def changePin(self):
         """Method that allows user to change their pin."""
