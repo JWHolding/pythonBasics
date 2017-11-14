@@ -6,10 +6,11 @@ class Account:
 
     numCreated = 0
 
-    def __init__(self, initial, fname):
+    def __init__(self, initial, fname, pin):
         """Account Constructor."""
         self.__balance = initial
         self.__name = fname
+        self.__pin = pin
         Account.numCreated += 1
 
     def deposit(self, amt):
@@ -27,3 +28,7 @@ class Account:
     def getName(self):
         """Name getter for Account."""
         return self.__name
+
+    def checkPin(self, upin):
+        """Method for checking if user inputted string matches stored pin."""
+        return bool(upin == self.__pin)
