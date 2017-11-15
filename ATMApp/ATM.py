@@ -16,7 +16,7 @@ acc5 = Account(100, "Shafeeq")
 
 while True:
     clearScreen()
-    ID = int(input("Please Insert your ID: "))
+    name = str(input("Please Insert your Name: "))
     clearScreen()
     pin = getpass.getpass()
     clearScreen()
