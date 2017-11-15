@@ -4,41 +4,46 @@ By Jacob JWHolding
 10.11.17
 """
 
-import getpass
-from ATMFunction import displayMenu, clearScreen
-from account import Account
+from ATMFunction import displayMenu, clearScreen, getAccount, delay
 
-acc1 = Account(100, "Jacob")
-acc2 = Account(100, "Gareth")
-acc3 = Account(100, "Elliot")
-acc4 = Account(100, "Tadas")
-acc5 = Account(100, "Shafeeq")
 
 while True:
     clearScreen()
-    name = str(input("Please Insert your Name: "))
-    clearScreen()
-    pin = getpass.getpass()
-    clearScreen()
-    count = int(0)
-    while True:
-        uin = str(displayMenu())
-        if uin == "1":
-            print("Hello %s. Your Current Balance is: %0.2f"
-                  % (acc1.getName(), float(acc1.getBalance())))
-            input("Press any key to continue...")
-            clearScreen()
-        elif uin == "2":
-            acc1.withdraw(int(input("How much would you like to Withdraw: ")))
-            input("Press any key to continue...")
-            clearScreen()
-        elif uin == "3":
-            acc1.deposit(int(input("How much would you like to Deposit: ")))
-            input("Press any key to continue...")
-            clearScreen()
-        elif uin == "Q" or uin == "q":
-            break
+    ID = int(input("Please Insert your ID: "))
+    acc = getAccount(ID)
+    attempts = int(0)
+    while attempts < 4:
+        clearScreen()
+        if acc.checkPin():
+            attempts = 0
+            while True:
+                uin = str(displayMenu())
+                if uin == "1":
+                    print("Hello %s. Your Current Balance is: £%0.2f"
+                          % (acc.getName(), float(acc.getBalance())))
+                    delay(2)
+                    clearScreen()
+                elif uin == "2":
+                    acc.withdraw()
+                    delay(0.5)
+                    clearScreen()
+                elif uin == "3":
+                    acc.deposit()
+                    delay(0.5)
+                    clearScreen()
+                elif uin == "4":
+                    acc.changePin()
+                elif uin == "Q" or uin == "q":
+                    print("Goodbye!")
+                    delay(0.5)
+                    attempts = 5
+                    break
+                else:
+                    clearScreen()
+                    print("Invalid option, try again.")
+                    continue
         else:
-            clearScreen()
-            print("Invalid option, try again.")
-            continue
+            attempts = attempts + 1
+    if attempts == 4:
+        print("Too many incorrect attempts")
+        input("press any key to continue...")

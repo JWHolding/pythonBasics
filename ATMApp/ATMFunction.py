@@ -1,4 +1,10 @@
 """Funtions for the ATM App."""
+from account import Account
+
+accs = [Account(100, "Jacob", "0000")], [Account(100, "Gareth", "0000")], \
+                                        [Account(100, "Elliot", "0000")], \
+                                        [Account(100, "Tadas", "0000")], \
+                                        [Account(100, "Shafeeq", "0000")]
 
 
 def displayMenu():
@@ -20,3 +26,21 @@ def clearScreen():
         os.system('cls')
     else:
         os.system('clear')
+
+
+def delay(amt):
+    """Provide a short delay. Seconds."""
+    import time
+    time.sleep(amt)
+
+
+def getAccount(uid):
+    """Return the account object for user."""
+    if uid == 1:
+        return accs[0]
+    elif uid == 2:
+        return accs[1]
+    elif uid == 3:
+        return accs[2]
+    elif uid == 4:
+        return accs[3]
