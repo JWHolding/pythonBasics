@@ -8,10 +8,11 @@ import getpass
 from ATMFunction import displayMenu, clearScreen
 from account import Account
 
-acc1 = Account(100, "Jacob", 1234)
-acc2 = Account(100, "Gareth", 123)
-acc3 = Account(100, "Elliot", 123)
-acc4 = Account(100, "Tadas", 123)
+acc1 = Account(100, "Jacob")
+acc2 = Account(100, "Gareth")
+acc3 = Account(100, "Elliot")
+acc4 = Account(100, "Tadas")
+acc5 = Account(100, "Shafeeq")
 
 while True:
     clearScreen()
