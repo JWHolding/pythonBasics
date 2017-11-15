@@ -1,12 +1,10 @@
 """Funtions for the ATM App."""
 from account import Account
 
-
-acc1 = Account(100, "Jacob", "0000")
-acc2 = Account(100, "Gareth", "0000")
-acc3 = Account(100, "Elliot", "0000")
-acc4 = Account(100, "Tadas", "0000")
-acc5 = Account(100, "Shafeeq", "0000")
+accs = [Account(100, "Jacob", "0000")], [Account(100, "Gareth", "0000")], \
+                                        [Account(100, "Elliot", "0000")], \
+                                        [Account(100, "Tadas", "0000")], \
+                                        [Account(100, "Shafeeq", "0000")]
 
 
 def displayMenu():
@@ -39,10 +37,10 @@ def delay(amt):
 def getAccount(uid):
     """Return the account object for user."""
     if uid == 1:
-        return acc1
+        return accs[0]
     elif uid == 2:
-        return acc2
+        return accs[1]
     elif uid == 3:
-        return acc3
+        return accs[2]
     elif uid == 4:
-        return acc4
+        return accs[3]
