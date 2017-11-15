@@ -1,10 +1,11 @@
 """Funtions for the ATM App."""
 from account import Account
 
-accs = [Account(100, "Jacob", "0000")], [Account(100, "Gareth", "0000")], \
-                                        [Account(100, "Elliot", "0000")], \
-                                        [Account(100, "Tadas", "0000")], \
-                                        [Account(100, "Shafeeq", "0000")]
+accs = [Account(100, "Jacob", "0000"),
+        Account(100, "Gareth", "0000"),
+        Account(100, "Elliot", "0000"),
+        Account(100, "Tadas", "0000"),
+        Account(100, "Shafeeq", "0000")]
 
 
 def displayMenu():
