@@ -6,10 +6,11 @@ class Account:
 
     numCreated = 0
 
-    def __init__(self, initial, fname):
+    def __init__(self, initial, fname, cpin):
         """Account Constructor."""
         self.__balance = initial
         self.__name = fname
+        self.__pin = cpin
         Account.numCreated += 1
 
     def deposit(self, amt):
@@ -27,3 +28,7 @@ class Account:
     def getName(self):
         """Name getter for Account."""
         return self.__name
+
+    def getPin(self):
+        """Return the pin for Account."""
+        return self.__pin

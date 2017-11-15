@@ -8,14 +8,14 @@ import getpass
 from ATMFunction import displayMenu, clearScreen
 from account import Account
 
-acc1 = Account(100, "Jacob")
-acc2 = Account(100, "Gareth")
-acc3 = Account(100, "Elliot")
-acc4 = Account(100, "Tadas")
+acc1 = Account(100, "Jacob", 1234)
+acc2 = Account(100, "Gareth", 123)
+acc3 = Account(100, "Elliot", 123)
+acc4 = Account(100, "Tadas", 123)
 
 while True:
     clearScreen()
-    ID = int(input("Please Insert your ID: "))
+    name = str(input("Please Insert your Name: "))
     clearScreen()
     pin = getpass.getpass()
     clearScreen()
