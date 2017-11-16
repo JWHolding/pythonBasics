@@ -28,6 +28,7 @@ class Account:
 
     def getBalance(self):
         """Balance getter for Account."""
+        print("Hello")
         return self.__balance
 
     def getName(self):

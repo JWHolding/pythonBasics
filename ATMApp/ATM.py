@@ -6,11 +6,17 @@ By Jacob JWHolding
 
 from ATMFunction import displayMenu, clearScreen, getAccount, delay
 
+acc = None
+
 
 while True:
     clearScreen()
     ID = int(input("Please Insert your ID: "))
     acc = getAccount(ID)
+    menu = {"1": acc.getBalance,
+            "2": acc.withdraw,
+            "3": acc.deposit,
+            "4": acc.changePin}
     attempts = int(0)
     while attempts < 4:
         clearScreen()
@@ -18,21 +24,9 @@ while True:
             attempts = 0
             while True:
                 uin = str(displayMenu())
-                if uin == "1":
-                    print("Hello %s. Your Current Balance is: £%0.2f"
-                          % (acc.getName(), float(acc.getBalance())))
-                    delay(2)
-                    clearScreen()
-                elif uin == "2":
-                    acc.withdraw()
-                    delay(0.5)
-                    clearScreen()
-                elif uin == "3":
-                    acc.deposit()
-                    delay(0.5)
-                    clearScreen()
-                elif uin == "4":
-                    acc.changePin()
+                if uin.isdigit():
+                    run = menu[uin]
+                    run()
                 elif uin == "Q" or uin == "q":
                     print("Goodbye!")
                     delay(0.5)

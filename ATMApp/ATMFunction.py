@@ -12,9 +12,10 @@ def displayMenu():
     """Print out ATM Menu."""
     print("Welcome To QA Bank")
     print("------------------------------")
-    print("Press 1 to see Current Balance")
-    print("Press 2 to withdraw Money")
+    print("Press 1 to See Current Balance")
+    print("Press 2 to Withdraw Money")
     print("Press 3 to Deposit Money")
+    print("Press 4 to Change PIN")
     print("q to quit")
     selection = str(input("Selection: "))
     return selection
@@ -41,3 +42,11 @@ def getAccount(uid):
         if int(uid) == accs[i].getId():
             print(accs[i])
             return accs[i]
+
+
+def currBalance(acc):
+    """Something."""
+    print("Hello %s. Your Current Balance is: £%0.2f"
+          % (acc.getName(), float(acc.getBalance())))
+    delay(2)
+    clearScreen()
