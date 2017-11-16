@@ -37,11 +37,7 @@ def delay(amt):
 
 def getAccount(uid):
     """Return the account object for user."""
-    if uid == 1:
-        return accs[0]
-    elif uid == 2:
-        return accs[1]
-    elif uid == 3:
-        return accs[2]
-    elif uid == 4:
-        return accs[3]
+    for i in range(0, len(accs)):
+        if int(uid) == accs[i].getId():
+            print(accs[i])
+            return accs[i]

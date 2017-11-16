@@ -34,6 +34,10 @@ class Account:
         """Name getter for Account."""
         return self.__name
 
+    def getId(self):
+        """ID Getter for Account."""
+        return int(self.__id)
+
     def checkPin(self):
         """Method for checking if user inputted string matches stored pin."""
         pin = getpass.getpass()
