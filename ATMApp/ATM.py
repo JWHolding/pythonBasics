@@ -24,10 +24,10 @@ while True:
             attempts = 0
             while True:
                 uin = str(displayMenu())
-                if uin.isdigit():
+                if uin.isdigit() and int(uin) <= len(menu):
                     run = menu[uin]
                     run()
-                elif uin == "Q" or uin == "q":
+                elif uin.upper() == "Q":
                     print("Goodbye!")
                     delay(0.5)
                     attempts = 5

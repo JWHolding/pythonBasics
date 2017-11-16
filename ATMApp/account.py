@@ -28,8 +28,8 @@ class Account:
 
     def getBalance(self):
         """Balance getter for Account."""
-        print("Hello")
-        return self.__balance
+        print("Hello %s. Your Current Balance is: £%0.2f"
+              % (self.__name, float(self.__balance)))
 
     def getName(self):
         """Name getter for Account."""
